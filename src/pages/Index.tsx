@@ -1,234 +1,209 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import Icon from "@/components/ui/icon";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Icon from '@/components/ui/icon';
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange via-pink to-yellow">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between p-6 bg-white/10 backdrop-blur-md">
-        <div className="text-3xl font-bold text-white">СРАКАСТИ</div>
-        <div className="hidden md:flex space-x-8 text-white font-medium">
-          <a href="#hero" className="hover:text-accent transition-colors">Главная</a>
-          <a href="#about" className="hover:text-accent transition-colors">О бренде</a>
-          <a href="#flavors" className="hover:text-accent transition-colors">Вкусы</a>
-          <a href="#stores" className="hover:text-accent transition-colors">Где купить</a>
-          <a href="#promos" className="hover:text-accent transition-colors">Акции</a>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-2xl font-bold text-primary">LuxAppliances</div>
+          <div className="hidden md:flex space-x-8">
+            <Link to="/" className="text-slate-700 hover:text-primary transition-colors">Главная</Link>
+            <Link to="/catalog" className="text-slate-700 hover:text-primary transition-colors">Каталог</Link>
+            <Link to="/about" className="text-slate-700 hover:text-primary transition-colors">О бренде</Link>
+            <Link to="/contact" className="text-slate-700 hover:text-primary transition-colors">Контакты</Link>
+          </div>
+          <Button variant="default" className="bg-primary text-white">
+            <Icon name="Phone" size={16} className="mr-2" />
+            Консультация
+          </Button>
         </div>
-        <Icon name="Menu" className="md:hidden text-white" size={24} />
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="px-6 py-20 text-center">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 leading-tight">
-            СРАКАСТИ
-          </h1>
-          <p className="text-2xl md:text-3xl text-white/90 mb-12 font-semibold">
-            Сухарики для тех, кто живет ярко! 🔥
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="p-8 bg-white/20 backdrop-blur-md border-0 text-white transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-4">🧄</div>
-              <h3 className="text-2xl font-bold mb-2">ЧЕСНОК</h3>
-              <p className="text-white/80">Острый вкус для смелых</p>
-            </Card>
-            <Card className="p-8 bg-white/20 backdrop-blur-md border-0 text-white transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-4">🌶️</div>
-              <h3 className="text-2xl font-bold mb-2">ПЕРЕЦ ЧИЛИ</h3>
-              <p className="text-white/80">Огненный характер</p>
-            </Card>
-            <Card className="p-8 bg-white/20 backdrop-blur-md border-0 text-white transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-4">🦀</div>
-              <h3 className="text-2xl font-bold mb-2">КРАБ</h3>
-              <p className="text-white/80">Морские приключения</p>
-            </Card>
-          </div>
-          <img 
-            src="/img/b95be3a0-cf5b-4186-aed2-812e879f36e9.jpg" 
-            alt="Сухарики СРАКАСТИ" 
-            className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl mb-12"
-          />
-          <Button size="lg" className="text-2xl px-12 py-6 bg-accent text-black font-bold hover:bg-accent/90">
-            Попробовать сейчас!
-          </Button>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl font-black text-primary mb-8">О БРЕНДЕ</h2>
-          <p className="text-2xl text-gray-700 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Мы создаем сухарики для поколения мечтателей! Наша миссия — дать вам энергию 
-            для ярких впечатлений и незабываемых моментов. От школьной перемены до студенческой 
-            вечеринки — СРАКАСТИ всегда с вами! 🚀
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="Zap" className="text-white" size={36} />
+      <section className="relative py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <Badge className="mb-6 bg-white/10 text-white border-white/20">Premium Collection</Badge>
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Элегантная<br />
+                <span className="text-slate-300">премиум</span><br />
+                техника
+              </h1>
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                Инновационные решения для современного дома. Безукоризненное качество, 
+                утонченный дизайн и надежность на десятилетия.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
+                  <Icon name="ShoppingBag" size={20} className="mr-2" />
+                  Смотреть каталог
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                  <Icon name="PlayCircle" size={20} className="mr-2" />
+                  Видео о технике
+                </Button>
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">ЭНЕРГИЯ</h3>
-              <p className="text-gray-600">Заряжаем на подвиги</p>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-pink rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="Heart" className="text-white" size={36} />
+            <div className="relative">
+              <img 
+                src="/img/2488f635-bc71-476a-806e-5c01cabb4dda.jpg" 
+                alt="Премиальная кухонная техника" 
+                className="rounded-xl shadow-2xl w-full"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-6 shadow-2xl">
+                <div className="flex items-center space-x-3">
+                  <Icon name="Award" size={24} className="text-amber-500" />
+                  <div>
+                    <p className="font-semibold text-slate-900">Гарантия 5 лет</p>
+                    <p className="text-sm text-slate-600">На всю технику</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">МОЛОДОСТЬ</h3>
-              <p className="text-gray-600">Понимаем ваши мечты</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="Star" className="text-white" size={36} />
-              </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">КАЧЕСТВО</h3>
-              <p className="text-gray-600">Только лучшие ингредиенты</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Flavors Section */}
-      <section id="flavors" className="px-6 py-20 bg-gradient-to-r from-pink to-orange">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-white text-center mb-16">НАШИ ВКУСЫ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <Card className="p-8 bg-white rounded-3xl transform hover:scale-105 transition-transform">
-              <div className="text-8xl text-center mb-6">🧄</div>
-              <h3 className="text-3xl font-bold text-primary mb-4 text-center">ЧЕСНОК</h3>
-              <p className="text-gray-600 text-lg mb-6 text-center">
-                Острый, ароматный вкус для тех, кто не боится быть замеченным. 
-                Идеально для вечеринок и встреч с друзьями.
-              </p>
-              <div className="bg-orange/20 rounded-2xl p-4 text-center">
-                <span className="text-primary font-bold">Остроты: 🔥🔥🔥</span>
-              </div>
-            </Card>
-
-            <Card className="p-8 bg-white rounded-3xl transform hover:scale-105 transition-transform">
-              <div className="text-8xl text-center mb-6">🌶️</div>
-              <h3 className="text-3xl font-bold text-primary mb-4 text-center">ПЕРЕЦ ЧИЛИ</h3>
-              <p className="text-gray-600 text-lg mb-6 text-center">
-                Огненный вкус для настоящих экстремалов! Проверь свои границы 
-                и почувствуй адреналин в каждом кусочке.
-              </p>
-              <div className="bg-pink/20 rounded-2xl p-4 text-center">
-                <span className="text-primary font-bold">Остроты: 🔥🔥🔥🔥🔥</span>
-              </div>
-            </Card>
-
-            <Card className="p-8 bg-white rounded-3xl transform hover:scale-105 transition-transform">
-              <div className="text-8xl text-center mb-6">🦀</div>
-              <h3 className="text-3xl font-bold text-primary mb-4 text-center">КРАБ</h3>
-              <p className="text-gray-600 text-lg mb-6 text-center">
-                Нежный морской вкус с легкой солинкой. Для тех, кто мечтает 
-                о приключениях и дальних путешествиях.
-              </p>
-              <div className="bg-blue/20 rounded-2xl p-4 text-center">
-                <span className="text-primary font-bold">Остроты: 🔥🔥</span>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Where to Buy Section */}
-      <section id="stores" className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl font-black text-primary mb-8">ГДЕ КУПИТЬ</h2>
-          <p className="text-2xl text-gray-600 mb-12">Найди СРАКАСТИ рядом с собой!</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <Card className="p-6 bg-orange/10 border-2 border-orange rounded-2xl">
-              <Icon name="ShoppingCart" className="mx-auto mb-4 text-orange" size={48} />
-              <h3 className="text-xl font-bold text-primary mb-2">Супермаркеты</h3>
-              <p className="text-gray-600">Пятёрочка, Магнит, Дикси</p>
-            </Card>
-            
-            <Card className="p-6 bg-pink/10 border-2 border-pink rounded-2xl">
-              <Icon name="Coffee" className="mx-auto mb-4 text-pink" size={48} />
-              <h3 className="text-xl font-bold text-primary mb-2">Кафе</h3>
-              <p className="text-gray-600">Студенческие столовые</p>
-            </Card>
-            
-            <Card className="p-6 bg-yellow/10 border-2 border-yellow rounded-2xl">
-              <Icon name="Smartphone" className="mx-auto mb-4 text-yellow" size={48} />
-              <h3 className="text-xl font-bold text-primary mb-2">Онлайн</h3>
-              <p className="text-gray-600">Яндекс Еда, Самокат</p>
-            </Card>
-            
-            <Card className="p-6 bg-blue/10 border-2 border-blue rounded-2xl">
-              <Icon name="MapPin" className="mx-auto mb-4 text-blue" size={48} />
-              <h3 className="text-xl font-bold text-primary mb-2">Киоски</h3>
-              <p className="text-gray-600">Возле вузов и школ</p>
-            </Card>
-          </div>
-          
-          <Button size="lg" className="bg-primary text-white text-xl px-8 py-4 hover:bg-primary/90">
-            <Icon name="MapPin" className="mr-2" size={20} />
-            Найти ближайший магазин
-          </Button>
-        </div>
-      </section>
-
-      {/* Promotions Section */}
-      <section id="promos" className="px-6 py-20 bg-gradient-to-r from-yellow to-orange">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl font-black text-white mb-12">АКЦИИ</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-8 bg-white rounded-3xl transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-6">🎓</div>
-              <h3 className="text-3xl font-bold text-primary mb-4">Студенческая скидка</h3>
-              <p className="text-gray-600 text-lg mb-6">
-                Покажи студенческий билет и получи 20% скидку на все вкусы!
-              </p>
-              <Button className="bg-orange text-white font-bold">
-                Получить скидку
-              </Button>
-            </Card>
-            
-            <Card className="p-8 bg-white rounded-3xl transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-6">🎁</div>
-              <h3 className="text-3xl font-bold text-primary mb-4">Собери коллекцию</h3>
-              <p className="text-gray-600 text-lg mb-6">
-                Купи все 3 вкуса и получи фирменную сумку СРАКАСТИ в подарок!
-              </p>
-              <Button className="bg-pink text-white font-bold">
-                Узнать больше
-              </Button>
-            </Card>
-          </div>
-          
-          <div className="bg-white/20 backdrop-blur-md rounded-3xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">🔥 Горячее предложение!</h3>
-            <p className="text-xl mb-6">
-              Первые 100 покупателей получают эксклюзивную упаковку с автографом основателя!
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-slate-100 text-slate-800">Почему выбирают нас</Badge>
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              Преимущества премиум-класса
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Каждая деталь продумана для вашего комфорта
             </p>
-            <Button size="lg" className="bg-accent text-black font-bold text-xl px-8 py-4">
-              Успеть купить!
-            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Zap" size={32} className="text-slate-700" />
+                </div>
+                <CardTitle className="text-xl">Инновационные технологии</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center text-slate-600 leading-relaxed">
+                  Интеллектуальное управление, энергоэффективность A+++, 
+                  Wi-Fi подключение для удаленного контроля
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Shield" size={32} className="text-slate-700" />
+                </div>
+                <CardTitle className="text-xl">Надежность</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center text-slate-600 leading-relaxed">
+                  Протестировано на 20+ лет службы. Расширенная гарантия 
+                  и сервисное обслуживание по всей России
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Crown" size={32} className="text-slate-700" />
+                </div>
+                <CardTitle className="text-xl">Премиум-дизайн</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center text-slate-600 leading-relaxed">
+                  Утонченные материалы, безукоризненная отделка, 
+                  гармонично вписывается в любой интерьер
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="text-4xl font-black text-orange mb-6">СРАКАСТИ</div>
-          <p className="text-xl text-gray-400 mb-8">Живи ярко, ешь смело! 🚀</p>
-          
-          <div className="flex justify-center space-x-8 mb-8">
-            <Icon name="Instagram" className="text-pink hover:scale-110 transition-transform cursor-pointer" size={32} />
-            <Icon name="MessageCircle" className="text-blue hover:scale-110 transition-transform cursor-pointer" size={32} />
-            <Icon name="Youtube" className="text-orange hover:scale-110 transition-transform cursor-pointer" size={32} />
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              Популярные категории
+            </h2>
+            <p className="text-xl text-slate-600">
+              Выберите технику для вашего дома
+            </p>
           </div>
-          
-          <div className="text-gray-500">
-            <p>&copy; 2024 СРАКАСТИ. Все права защищены.</p>
-            <p className="mt-2">Для настоящих мечтателей от 12 до 23 лет ❤️</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Холодильники", icon: "Refrigerator", count: "24 модели" },
+              { name: "Духовые шкафы", icon: "ChefHat", count: "18 моделей" },
+              { name: "Стиральные машины", icon: "Washing", count: "16 моделей" },
+              { name: "Посудомойки", icon: "Droplets", count: "12 моделей" }
+            ].map((category, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon name={category.icon as any} size={24} className="text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 mb-2">{category.name}</h3>
+                  <p className="text-sm text-slate-600">{category.count}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-slate-900 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-bold text-xl mb-4">LuxAppliances</h3>
+              <p className="text-slate-400 mb-4">
+                Премиальная бытовая техника для современного дома
+              </p>
+              <div className="flex space-x-4">
+                <Icon name="Phone" size={20} className="text-slate-400" />
+                <span className="text-slate-400">8 (800) 123-45-67</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Каталог</h4>
+              <ul className="space-y-2 text-slate-400">
+                <li><a href="#" className="hover:text-white transition-colors">Холодильники</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Духовые шкафы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Стиральные машины</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Посудомойки</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Сервис</h4>
+              <ul className="space-y-2 text-slate-400">
+                <li><a href="#" className="hover:text-white transition-colors">Гарантия</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Установка</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Ремонт</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Запчасти</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Контакты</h4>
+              <div className="space-y-2 text-slate-400">
+                <p>Москва, ул. Тверская, 1</p>
+                <p>info@luxappliances.ru</p>
+                <p>Пн-Вс: 9:00-21:00</p>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+            <p>&copy; 2024 LuxAppliances. Все права защищены.</p>
           </div>
         </div>
       </footer>
